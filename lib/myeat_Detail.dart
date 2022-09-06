@@ -1,20 +1,15 @@
-// ignore_for_file: prefer_const_constructors, file_names, use_key_in_widget_constructors, prefer_const_constructors_in_immutables, prefer_const_literals_to_create_immutables, avoid_unnecessary_containers, unused_import
+// ignore_for_file: prefer_const_constructors, file_names, use_key_in_widget_constructors, prefer_const_constructors_in_immutables, prefer_const_literals_to_create_immutables, avoid_unnecessary_containers, unused_import, unnecessary_new, sized_box_for_whitespace
 
 import 'package:flutter/material.dart';
 import 'package:tugas_my_eat/main.dart';
 import 'myeat.dart';
 
 class MyEatDetail extends StatelessWidget {
-  final String gambar;
-  final String makanan;
-  final String avatar;
-  final String chef;
+  // final String gambar;
+  final Map data;
 
   MyEatDetail({
-    required this.gambar,
-    required this.makanan,
-    required this.avatar,
-    required this.chef,
+    required this.data
   });
 
   @override
@@ -129,16 +124,16 @@ class MyEatDetail extends StatelessWidget {
                                     children: [
                                       Container(
                                         margin: EdgeInsets.only(right: 15),
-                                        child: CircleAvatar(
-                                          backgroundImage: NetworkImage(avatar),
-                                        ),
+                                        // child: CircleAvatar(
+                                        //   backgroundImage: NetworkImage(avatar),
+                                        // ),
                                       )
                                     ],
                                   ),
                                   Column(
                                     children: [
                                       Text(
-                                        chef,
+                                        "chef uncle mutu",
                                         style: TextStyle(
                                             color: Colors.white, fontSize: 18),
                                       ),
@@ -167,7 +162,7 @@ class MyEatDetail extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
-                            makanan,
+                            "makanan",
                             style: TextStyle(
                                 fontWeight: FontWeight.bold, fontSize: 30),
                           ),

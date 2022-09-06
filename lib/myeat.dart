@@ -1,4 +1,4 @@
-// ignore_for_file: file_names, unnecessary_import, prefer_const_constructors, prefer_const_literals_to_create_immutables, avoid_unnecessary_containers, sized_box_for_whitespace, unnecessary_new
+// ignore_for_file: file_names, unnecessary_import, prefer_const_constructors, prefer_const_literals_to_create_immutables, avoid_unnecessary_containers, sized_box_for_whitespace, unnecessary_new, unused_import
 
 import 'dart:ui';
 
@@ -204,17 +204,26 @@ class MyEat extends StatelessWidget {
                     children: [
                       InkWell(
                         onTap: () {
-                          Navigator.push(context,
-                              MaterialPageRoute(builder: (context) {
-                            return MyEatDetail(
-                              gambar:
-                                  "https://img.inews.co.id/media/620/files/inews_new/2020/09/04/sate_ayam.jpg",
-                              makanan: "Satay",
-                              avatar:
-                                  "https://asset.kompas.com/crops/TZvXDrCNKfQvoijJUwvEwRW4xA8=/67x45:1000x667/750x500/data/photo/2017/06/22/163250620170622-042902-3586-chef.juna-.atau-.junior-.rorimpandey-.jpg",
-                              chef: "Chef Juna",
-                            );
-                          }));
+                          // Navigator.push(context,
+                          //     MaterialPageRoute(builder: (context) {
+                          //   return MyEatDetail(
+                          //     gambar:
+                          //         "https://img.inews.co.id/media/620/files/inews_new/2020/09/04/sate_ayam.jpg",
+                          //     makanan: "Satay",
+                          //     avatar:
+                          //         "https://asset.kompas.com/crops/TZvXDrCNKfQvoijJUwvEwRW4xA8=/67x45:1000x667/750x500/data/photo/2017/06/22/163250620170622-042902-3586-chef.juna-.atau-.junior-.rorimpandey-.jpg",
+                          //     chef: "Chef Juna",
+                          //   );
+                          // }));
+                          Navigator.pushNamed(context, '/detailEat',
+                              arguments: {
+                                "gambar":
+                                    "https://img.inews.co.id/media/620/files/inews_new/2020/09/04/sate_ayam.jpg",
+                                "makanan": "Satay",
+                                "avatar":
+                                    "https://asset.kompas.com/crops/TZvXDrCNKfQvoijJUwvEwRW4xA8=/67x45:1000x667/750x500/data/photo/2017/06/22/163250620170622-042902-3586-chef.juna-.atau-.junior-.rorimpandey-.jpg",
+                                "chef": "Chef Juna",
+                              });
                         },
                         child: Container(
                           margin: EdgeInsets.only(top: 20, bottom: 10),
@@ -389,17 +398,26 @@ class MyEat extends StatelessWidget {
                     children: [
                       InkWell(
                         onTap: () {
-                          Navigator.push(context,
-                              MaterialPageRoute(builder: (context) {
-                            return MyEatDetail(
-                              gambar:
-                                  "https://cdn1-production-images-kly.akamaized.net/KxuztQKl3tnUN0Fw5iAwKsnX_u0=/0x148:1920x1230/640x360/filters:quality(75):strip_icc():format(jpeg)/kly-media-production/medias/3093328/original/069244600_1585909700-fried-2509089_1920.jpg",
-                              makanan: "Fried Rice",
-                              avatar:
-                                  "https://img.celebrities.id/okz/700/V74bn3/master_p2c323IUs1_1875_biodata_chef_arnold.jpg",
-                              chef: "Chef Arnold",
-                            );
-                          }));
+                          // Navigator.push(context,
+                          //     MaterialPageRoute(builder: (context) {
+                          //   return MyEatDetail(
+                          //     gambar:
+                          //         "https://cdn1-production-images-kly.akamaized.net/KxuztQKl3tnUN0Fw5iAwKsnX_u0=/0x148:1920x1230/640x360/filters:quality(75):strip_icc():format(jpeg)/kly-media-production/medias/3093328/original/069244600_1585909700-fried-2509089_1920.jpg",
+                          //     makanan: "Fried Rice",
+                          //     avatar:
+                          //         "https://img.celebrities.id/okz/700/V74bn3/master_p2c323IUs1_1875_biodata_chef_arnold.jpg",
+                          //     chef: "Chef Arnold",
+                          //   );
+                          // }));
+                          Navigator.pushNamed(context, '/detailEat',
+                              arguments: {
+                                "gambar":
+                                    "https://img.inews.co.id/media/620/files/inews_new/2020/09/04/sate_ayam.jpg",
+                                "makanan": "Satay",
+                                "avatar":
+                                    "https://asset.kompas.com/crops/TZvXDrCNKfQvoijJUwvEwRW4xA8=/67x45:1000x667/750x500/data/photo/2017/06/22/163250620170622-042902-3586-chef.juna-.atau-.junior-.rorimpandey-.jpg",
+                                "chef": "Chef Juna",
+                              });
                         },
                         child: Container(
                           margin: EdgeInsets.only(top: 20, bottom: 10),
@@ -579,17 +597,26 @@ class MyEat extends StatelessWidget {
                     children: [
                       InkWell(
                         onTap: () {
-                          Navigator.push(context,
-                              MaterialPageRoute(builder: (context) {
-                            return MyEatDetail(
-                              gambar:
-                                  "https://asset.kompas.com/crops/WBLvTBboX-lKFj3ehPXJpmMULYY=/0x298:750x798/780x390/data/photo/2020/09/25/5f6da653c1860.jpg",
-                              makanan: "Fried Chicken",
-                              avatar:
-                                  "https://media.suara.com/pictures/653x366/2021/08/21/65045-galih-ginanjar-youtubecom.jpg",
-                              chef: "Chef Galih",
-                            );
-                          }));
+                          // Navigator.push(context,
+                          //     MaterialPageRoute(builder: (context) {
+                          //   return MyEatDetail(
+                          //     gambar:
+                          //         "https://asset.kompas.com/crops/WBLvTBboX-lKFj3ehPXJpmMULYY=/0x298:750x798/780x390/data/photo/2020/09/25/5f6da653c1860.jpg",
+                          //     makanan: "Fried Chicken",
+                          //     avatar:
+                          //         "https://media.suara.com/pictures/653x366/2021/08/21/65045-galih-ginanjar-youtubecom.jpg",
+                          //     chef: "Chef Galih",
+                          //   );
+                          // }));
+                          Navigator.pushNamed(context, '/detailEat',
+                              arguments: {
+                                "gambar":
+                                    "https://img.inews.co.id/media/620/files/inews_new/2020/09/04/sate_ayam.jpg",
+                                "makanan": "Satay",
+                                "avatar":
+                                    "https://asset.kompas.com/crops/TZvXDrCNKfQvoijJUwvEwRW4xA8=/67x45:1000x667/750x500/data/photo/2017/06/22/163250620170622-042902-3586-chef.juna-.atau-.junior-.rorimpandey-.jpg",
+                                "chef": "Chef Juna",
+                              });
                         },
                         child: Container(
                           margin: EdgeInsets.only(top: 20, bottom: 10),
@@ -764,17 +791,26 @@ class MyEat extends StatelessWidget {
                     children: [
                       InkWell(
                         onTap: () {
-                          Navigator.push(context,
-                              MaterialPageRoute(builder: (context) {
-                            return MyEatDetail(
-                              gambar:
-                                  "https://cdn0-production-images-kly.akamaized.net/UqZEUwWxSbN5XxvjSwT9nRfRtek=/1459x0:3990x3376/469x625/filters:quality(75):strip_icc():format(webp)/kly-media-production/medias/2761430/original/062937300_1553588238-shutterstock_1287553195.JPG",
-                              makanan: "Bakwan",
-                              avatar:
-                                  "https://asset.kompas.com/crops/IjmmRwybxe-4tZrGRN5eMrq_po8=/0x32:700x382/750x500/data/photo/2020/01/09/5e16811892fc7.jpg",
-                              chef: "Chef Renatta",
-                            );
-                          }));
+                          // Navigator.push(context,
+                          //     MaterialPageRoute(builder: (context) {
+                          //   return MyEatDetail(
+                          //     gambar:
+                          //         "https://cdn0-production-images-kly.akamaized.net/UqZEUwWxSbN5XxvjSwT9nRfRtek=/1459x0:3990x3376/469x625/filters:quality(75):strip_icc():format(webp)/kly-media-production/medias/2761430/original/062937300_1553588238-shutterstock_1287553195.JPG",
+                          //     makanan: "Bakwan",
+                          //     avatar:
+                          //         "https://asset.kompas.com/crops/IjmmRwybxe-4tZrGRN5eMrq_po8=/0x32:700x382/750x500/data/photo/2020/01/09/5e16811892fc7.jpg",
+                          //     chef: "Chef Renatta",
+                          //   );
+                          // }));
+                          Navigator.pushNamed(context, '/detailEat',
+                              arguments: {
+                                "gambar":
+                                    "https://img.inews.co.id/media/620/files/inews_new/2020/09/04/sate_ayam.jpg",
+                                "makanan": "Satay",
+                                "avatar":
+                                    "https://asset.kompas.com/crops/TZvXDrCNKfQvoijJUwvEwRW4xA8=/67x45:1000x667/750x500/data/photo/2017/06/22/163250620170622-042902-3586-chef.juna-.atau-.junior-.rorimpandey-.jpg",
+                                "chef": "Chef Juna",
+                              });
                         },
                         child: Container(
                           margin: EdgeInsets.only(top: 20, bottom: 10),
@@ -954,17 +990,26 @@ class MyEat extends StatelessWidget {
                     children: [
                       InkWell(
                         onTap: () {
-                          Navigator.push(context,
-                              MaterialPageRoute(builder: (context) {
-                            return MyEatDetail(
-                              gambar:
-                                  "https://asset-a.grid.id/crop/0x0:0x0/x/photo/2021/09/24/tempe-gorengjpg-20210924014738.jpg",
-                              makanan: "Tempe",
-                              avatar:
-                                  "https://statik.tempo.co/data/2011/07/15/id_83813/83813_620.jpg",
-                              chef: "Chef Bambang",
-                            );
-                          }));
+                          // Navigator.push(context,
+                          //     MaterialPageRoute(builder: (context) {
+                          //   return MyEatDetail(
+                          //     gambar:
+                          //         "https://asset-a.grid.id/crop/0x0:0x0/x/photo/2021/09/24/tempe-gorengjpg-20210924014738.jpg",
+                          //     makanan: "Tempe",
+                          //     avatar:
+                          //         "https://statik.tempo.co/data/2011/07/15/id_83813/83813_620.jpg",
+                          //     chef: "Chef Bambang",
+                          //   );
+                          // }));
+                          Navigator.pushNamed(context, '/detailEat',
+                              arguments: {
+                                "gambar":
+                                    "https://img.inews.co.id/media/620/files/inews_new/2020/09/04/sate_ayam.jpg",
+                                "makanan": "Satay",
+                                "avatar":
+                                    "https://asset.kompas.com/crops/TZvXDrCNKfQvoijJUwvEwRW4xA8=/67x45:1000x667/750x500/data/photo/2017/06/22/163250620170622-042902-3586-chef.juna-.atau-.junior-.rorimpandey-.jpg",
+                                "chef": "Chef Juna",
+                              });
                         },
                         child: Container(
                           margin: EdgeInsets.only(top: 20, bottom: 10),
@@ -1138,17 +1183,26 @@ class MyEat extends StatelessWidget {
                     children: [
                       InkWell(
                         onTap: () {
-                          Navigator.push(context,
-                              MaterialPageRoute(builder: (context) {
-                            return MyEatDetail(
-                              gambar:
-                                  "https://cdn0-production-images-kly.akamaized.net/k-8T2_IXluILxIDDBwJvGuzAtkE=/0x120:3000x1811/1200x675/filters:quality(75):strip_icc():format(webp)/kly-media-production/medias/3282059/original/075075700_1604028408-shutterstock_1788721670.jpg",
-                              makanan: "Rendang",
-                              avatar:
-                                  "https://asset-a.grid.id/crop/0x0:0x0/360x240/photo/2018/08/29/2997583815.jpg",
-                              chef: "Chef Gordon",
-                            );
-                          }));
+                          // Navigator.push(context,
+                          //     MaterialPageRoute(builder: (context) {
+                          //   return MyEatDetail(
+                          //     gambar:
+                          //         "https://cdn0-production-images-kly.akamaized.net/k-8T2_IXluILxIDDBwJvGuzAtkE=/0x120:3000x1811/1200x675/filters:quality(75):strip_icc():format(webp)/kly-media-production/medias/3282059/original/075075700_1604028408-shutterstock_1788721670.jpg",
+                          //     makanan: "Rendang",
+                          //     avatar:
+                          //         "https://asset-a.grid.id/crop/0x0:0x0/360x240/photo/2018/08/29/2997583815.jpg",
+                          //     chef: "Chef Gordon",
+                          //   );
+                          // }));
+                          Navigator.pushNamed(context, '/detailEat',
+                              arguments: {
+                                "gambar":
+                                    "https://img.inews.co.id/media/620/files/inews_new/2020/09/04/sate_ayam.jpg",
+                                "makanan": "Satay",
+                                "avatar":
+                                    "https://asset.kompas.com/crops/TZvXDrCNKfQvoijJUwvEwRW4xA8=/67x45:1000x667/750x500/data/photo/2017/06/22/163250620170622-042902-3586-chef.juna-.atau-.junior-.rorimpandey-.jpg",
+                                "chef": "Chef Juna",
+                              });
                         },
                         child: Container(
                           margin: EdgeInsets.only(top: 20, bottom: 10),
