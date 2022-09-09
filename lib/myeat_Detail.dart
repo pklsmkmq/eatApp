@@ -37,7 +37,7 @@ class MyEatDetail extends StatelessWidget {
                               bottomLeft: Radius.circular(20),
                               bottomRight: Radius.circular(20)),
                           image: DecorationImage(
-                              image: NetworkImage(gambar),
+                              image: NetworkImage(data["gambar"]),
                               fit: BoxFit.fill,
                               colorFilter: new ColorFilter.mode(
                                   Colors.black.withOpacity(0.5),
@@ -124,16 +124,16 @@ class MyEatDetail extends StatelessWidget {
                                     children: [
                                       Container(
                                         margin: EdgeInsets.only(right: 15),
-                                        // child: CircleAvatar(
-                                        //   backgroundImage: NetworkImage(avatar),
-                                        // ),
+                                        child: CircleAvatar(
+                                          backgroundImage: NetworkImage(data["avatar"]),
+                                        ),
                                       )
                                     ],
                                   ),
                                   Column(
                                     children: [
                                       Text(
-                                        "chef uncle mutu",
+                                        data["chef"],
                                         style: TextStyle(
                                             color: Colors.white, fontSize: 18),
                                       ),
@@ -162,7 +162,7 @@ class MyEatDetail extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
-                            "makanan",
+                            data["makanan"],
                             style: TextStyle(
                                 fontWeight: FontWeight.bold, fontSize: 30),
                           ),
