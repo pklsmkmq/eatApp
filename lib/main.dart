@@ -5,6 +5,7 @@ import 'package:tugas_my_eat/latihan_listview.dart';
 import 'package:tugas_my_eat/model/foodsdata.dart';
 import 'package:tugas_my_eat/myeat.dart';
 import 'package:tugas_my_eat/myeat_Detail.dart';
+import 'package:tugas_my_eat/searchPage.dart';
 
 void main() {
   runApp(MyApp());
@@ -22,8 +23,10 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => MyEat(),
-        '/detailEat': (context) =>
-            MyEatDetail(data: ModalRoute.of(context)?.settings.arguments as Foods)
+        '/detailEat': (context) => MyEatDetail(
+            data: ModalRoute.of(context)?.settings.arguments as Foods),
+        '/searchPage': (context) => SearchPage(
+            keyword: ModalRoute.of(context)?.settings.arguments as String)
       },
     );
   }

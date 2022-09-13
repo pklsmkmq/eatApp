@@ -4,24 +4,30 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:tugas_my_eat/model/foodsdata.dart';
-import 'package:tugas_my_eat/myEat_detail.dart';
+import 'package:tugas_my_eat/myeat_Detail.dart';
 import 'package:tugas_my_eat/service/foodService.dart';
 
-class MyEat extends StatefulWidget {
-  const MyEat({Key? key}) : super(key: key);
+class SearchPage extends StatefulWidget {
+  final String keyword;
+
+  SearchPage({required this.keyword});
 
   @override
-  State<MyEat> createState() => _MyEatState();
+  State<SearchPage> createState() => _SearchPageState();
 }
 
-class _MyEatState extends State<MyEat> {
+class _SearchPageState extends State<SearchPage> {
   List<Foods> dataFoods = [];
+  List<Foods> dataSearch = [];
   TextEditingController search = TextEditingController();
 
   void getFoodsData() {
     FoodService().getData().then((value) {
       setState(() {
         dataFoods = value;
+        dataSearch = dataFoods
+            .where((element) => element.nameFoods.contains(widget.keyword))
+            .toList();
       });
     });
   }
@@ -80,23 +86,10 @@ class _MyEatState extends State<MyEat> {
                   ),
                 ],
               ),
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  children: [
-                    Kategori("Populer"),
-                    Kategori("Lunch"),
-                    Kategori("Dinner"),
-                    Kategori("Populer"),
-                    Kategori("Beverage"),
-                    Kategori("Breakfast"),
-                  ],
-                ),
-              ),
               Wrap(
                   spacing: MediaQuery.of(context).size.width * 0.05,
-                  children: List.generate(dataFoods.length, (index) {
-                    return FoodList(context, dataFoods[index]);
+                  children: List.generate(dataSearch.length, (index) {
+                    return FoodList(context, dataSearch[index]);
                   })),
             ],
           ),
