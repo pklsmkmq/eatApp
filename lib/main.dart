@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:tugas_my_eat/latihan_listview.dart';
+import 'package:tugas_my_eat/model/foodsdata.dart';
 import 'package:tugas_my_eat/myeat.dart';
 import 'package:tugas_my_eat/myeat_Detail.dart';
 
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => MyEat(),
         '/detailEat': (context) =>
-            MyEatDetail(data: ModalRoute.of(context)?.settings.arguments as Map)
+            MyEatDetail(data: ModalRoute.of(context)?.settings.arguments as Foods)
       },
     );
   }

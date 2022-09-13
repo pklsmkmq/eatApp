@@ -2,11 +2,12 @@
 
 import 'package:flutter/material.dart';
 import 'package:tugas_my_eat/main.dart';
+import 'package:tugas_my_eat/model/foodsdata.dart';
 import 'myeat.dart';
 
 class MyEatDetail extends StatelessWidget {
   // final String gambar;
-  final Map data;
+  final Foods data;
 
   MyEatDetail({
     required this.data
@@ -37,7 +38,7 @@ class MyEatDetail extends StatelessWidget {
                               bottomLeft: Radius.circular(20),
                               bottomRight: Radius.circular(20)),
                           image: DecorationImage(
-                              image: NetworkImage(data["gambar"]),
+                              image: NetworkImage(data.imageFoods),
                               fit: BoxFit.fill,
                               colorFilter: new ColorFilter.mode(
                                   Colors.black.withOpacity(0.5),
@@ -125,7 +126,7 @@ class MyEatDetail extends StatelessWidget {
                                       Container(
                                         margin: EdgeInsets.only(right: 15),
                                         child: CircleAvatar(
-                                          backgroundImage: NetworkImage(data["avatar"]),
+                                          backgroundImage: NetworkImage(data.imageFoods),
                                         ),
                                       )
                                     ],
@@ -133,7 +134,7 @@ class MyEatDetail extends StatelessWidget {
                                   Column(
                                     children: [
                                       Text(
-                                        data["chef"],
+                                        data.recipeMakerFoods,
                                         style: TextStyle(
                                             color: Colors.white, fontSize: 18),
                                       ),
@@ -162,7 +163,7 @@ class MyEatDetail extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
-                            data["makanan"],
+                            data.nameFoods,
                             style: TextStyle(
                                 fontWeight: FontWeight.bold, fontSize: 30),
                           ),
