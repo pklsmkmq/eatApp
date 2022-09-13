@@ -110,17 +110,9 @@ class _MyEatState extends State<MyEat> {
                 ),
               ),
               Wrap(
-                  spacing: MediaQuery.of(context).size.width * 0.1,
+                  spacing: MediaQuery.of(context).size.width * 0.05,
                   children: List.generate(dataFoods.length, (index) {
-                    return FoodList(
-                        context,
-                        dataFoods[index].nameFoods,
-                        dataFoods[index].imageFoods,
-                        dataFoods[index].imageFoods,
-                        dataFoods[index].recipeMakerFoods,
-                        dataFoods[index].kcalFoods,
-                        dataFoods[index].ratingFoods,
-                        "${dataFoods[index].timeFoods} menit");
+                    return FoodList(context, dataFoods[index]);
                   })),
             ],
           ),
@@ -152,18 +144,12 @@ Widget Kategori(String kata) {
   );
 }
 
-Widget FoodList(context, String nama, String gambar, String avatar, String chef,
-    int kalori, double rating, String timefood) {
+Widget FoodList(context, Foods data) {
   return Column(
     children: [
       InkWell(
         onTap: () {
-          Navigator.pushNamed(context, '/detailEat', arguments: {
-            "gambar": gambar,
-            "makanan": nama,
-            "avatar": avatar,
-            "chef": chef,
-          });
+          Navigator.pushNamed(context, '/detailEat', arguments: data);
         },
         child: Container(
           margin: EdgeInsets.only(top: 20, bottom: 10),
@@ -178,7 +164,7 @@ Widget FoodList(context, String nama, String gambar, String avatar, String chef,
             borderRadius: BorderRadius.circular(15),
             image: DecorationImage(
                 image: NetworkImage(
-                  gambar,
+                  data.imageFoods,
                 ),
                 fit: BoxFit.cover,
                 colorFilter: new ColorFilter.mode(
@@ -205,7 +191,7 @@ Widget FoodList(context, String nama, String gambar, String avatar, String chef,
                       Container(
                         margin: EdgeInsets.only(top: 10),
                         child: Text(
-                          '${kalori} Kcal',
+                          '${data.kcalFoods} Kcal',
                           style: TextStyle(color: Colors.white, fontSize: 18),
                         ),
                       )
@@ -228,7 +214,7 @@ Widget FoodList(context, String nama, String gambar, String avatar, String chef,
                       Container(
                         margin: EdgeInsets.only(top: 10),
                         child: Text(
-                          '${rating}',
+                          '${data.ratingFoods}',
                           style: TextStyle(color: Colors.white, fontSize: 18),
                         ),
                       )
@@ -243,7 +229,7 @@ Widget FoodList(context, String nama, String gambar, String avatar, String chef,
                       Container(
                         margin: EdgeInsets.only(left: 13, top: 110, bottom: 3),
                         child: Text(
-                          nama,
+                          data.nameFoods,
                           style: TextStyle(color: Colors.white, fontSize: 18),
                         ),
                       ),
@@ -267,7 +253,7 @@ Widget FoodList(context, String nama, String gambar, String avatar, String chef,
                     children: [
                       Container(
                         child: Text(
-                          timefood,
+                          data.timeFoods.toString(),
                           style: TextStyle(color: Colors.white, fontSize: 18),
                         ),
                       ),
@@ -300,7 +286,7 @@ Widget FoodList(context, String nama, String gambar, String avatar, String chef,
                   margin: EdgeInsets.only(right: 15),
                   child: CircleAvatar(
                     radius: 20,
-                    backgroundImage: NetworkImage(avatar),
+                    backgroundImage: NetworkImage(data.imageFoods),
                   ),
                 ),
               ],
@@ -308,7 +294,7 @@ Widget FoodList(context, String nama, String gambar, String avatar, String chef,
             Column(
               children: [
                 Text(
-                  chef,
+                  data.recipeMakerFoods,
                   style: TextStyle(fontWeight: FontWeight.w500, fontSize: 15),
                 ),
               ],
