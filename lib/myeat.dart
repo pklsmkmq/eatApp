@@ -16,6 +16,7 @@ class MyEat extends StatefulWidget {
 
 class _MyEatState extends State<MyEat> {
   List<Foods> dataFoods = [];
+  TextEditingController search = TextEditingController();
 
   void getFoodsData() {
     FoodService().getData().then((value) {
@@ -44,55 +45,35 @@ class _MyEatState extends State<MyEat> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Column(
-                    children: [
-                      Container(
-                        margin: EdgeInsets.only(top: 20, bottom: 10),
-                        width: 350,
-                        height: 60,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(15),
-                          color: Colors.grey[200],
-                        ),
-                        child: Row(
-                          children: [
-                            Container(
-                              margin: EdgeInsets.symmetric(horizontal: 10),
-                              child: Icon(
-                                Icons.search,
-                                size: 30,
-                                color: Colors.grey[500],
+                  Container(
+                      margin: EdgeInsets.only(bottom: 20, top: 25),
+                      width: MediaQuery.of(context).size.width * 0.60,
+                      child: TextField(
+                        controller: search,
+                        decoration: InputDecoration(
+                            prefixIcon: Icon(Icons.search),
+                            enabledBorder: OutlineInputBorder(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(20.0)),
+                              borderSide: BorderSide(
+                                color: Colors.grey,
                               ),
-                            ),
-                            Text(
-                              'Search...',
-                              style: TextStyle(
-                                fontSize: 15,
-                                color: Colors.grey[500],
-                              ),
-                            )
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                  Column(
-                    children: [
-                      Container(
-                        margin: EdgeInsets.only(top: 20, bottom: 10),
-                        width: 60,
-                        height: 60,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(15),
-                          color: Color.fromARGB(255, 82, 95, 120),
-                        ),
-                        child: Icon(
-                          Icons.notifications_none_rounded,
-                          size: 30,
-                          color: Colors.white,
-                        ),
-                      ),
-                    ],
+                            )),
+                        onSubmitted: (value) {},
+                      )),
+                  Container(
+                    margin: EdgeInsets.only(top: 20, bottom: 10),
+                    width: MediaQuery.of(context).size.width * 0.20,
+                    height: 60,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15),
+                      color: Color.fromARGB(255, 82, 95, 120),
+                    ),
+                    child: Icon(
+                      Icons.notifications_none_rounded,
+                      size: 30,
+                      color: Colors.white,
+                    ),
                   ),
                 ],
               ),

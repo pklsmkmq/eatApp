@@ -9,9 +9,7 @@ class MyEatDetail extends StatelessWidget {
   // final String gambar;
   final Foods data;
 
-  MyEatDetail({
-    required this.data
-  });
+  MyEatDetail({required this.data});
 
   @override
   Widget build(BuildContext context) {
@@ -126,7 +124,8 @@ class MyEatDetail extends StatelessWidget {
                                       Container(
                                         margin: EdgeInsets.only(right: 15),
                                         child: CircleAvatar(
-                                          backgroundImage: NetworkImage(data.imageFoods),
+                                          backgroundImage:
+                                              NetworkImage(data.imageFoods),
                                         ),
                                       )
                                     ],
@@ -204,7 +203,7 @@ class MyEatDetail extends StatelessWidget {
                                 Column(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                                    Text("50",
+                                    Text(data.kcalFoods.toString(),
                                         style: TextStyle(
                                             color: Color.fromARGB(
                                                 255, 82, 95, 120),
@@ -216,7 +215,7 @@ class MyEatDetail extends StatelessWidget {
                                 Column(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                                    Text("21",
+                                    Text(data.weightFoods.toString(),
                                         style: TextStyle(
                                             color: Color.fromARGB(
                                                 255, 82, 95, 120),
@@ -228,7 +227,7 @@ class MyEatDetail extends StatelessWidget {
                                 Column(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                                    Text("30",
+                                    Text(data.timeFoods.toString(),
                                         style: TextStyle(
                                             color: Color.fromARGB(
                                                 255, 82, 95, 120),
@@ -263,7 +262,7 @@ class MyEatDetail extends StatelessWidget {
                                 Column(
                                   children: [
                                     Text(
-                                      "5 Items",
+                                      "${data.ingredientFoods.length} Items",
                                       style: TextStyle(
                                           color:
                                               Color.fromARGB(255, 82, 95, 120),
@@ -277,8 +276,10 @@ class MyEatDetail extends StatelessWidget {
                         ],
                       ),
                       Column(
-                        children: [
-                          Container(
+                        //lakukan perulangan list.generate();
+                        children:
+                            List.generate(data.ingredientFoods.length, (index) {
+                          return Container(
                             margin: EdgeInsets.symmetric(vertical: 10),
                             width: 440,
                             // height: 500,
@@ -289,7 +290,7 @@ class MyEatDetail extends StatelessWidget {
                                   Column(
                                     children: [
                                       Text(
-                                        "Meat",
+                                        data.ingredientFoods[index].nameIngredientFoods,
                                         style: TextStyle(
                                             color: Color.fromARGB(
                                                 255, 82, 95, 120),
@@ -300,7 +301,7 @@ class MyEatDetail extends StatelessWidget {
                                   Column(
                                     children: [
                                       Text(
-                                        "1 Kg",
+                                        data.ingredientFoods[index].weightIngredientFoods,
                                         style: TextStyle(
                                             color: Color.fromARGB(
                                                 255, 82, 95, 120),
@@ -309,136 +310,8 @@ class MyEatDetail extends StatelessWidget {
                                     ],
                                   ),
                                 ]),
-                          ),
-                          Container(
-                            margin: EdgeInsets.symmetric(vertical: 10),
-                            width: 440,
-                            // height: 500,
-                            child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Column(
-                                    children: [
-                                      Text(
-                                        "Soy Sauce",
-                                        style: TextStyle(
-                                            color: Color.fromARGB(
-                                                255, 82, 95, 120),
-                                            fontSize: 18),
-                                      ),
-                                    ],
-                                  ),
-                                  Column(
-                                    children: [
-                                      Text(
-                                        "1 Pc",
-                                        style: TextStyle(
-                                            color: Color.fromARGB(
-                                                255, 82, 95, 120),
-                                            fontSize: 18),
-                                      ),
-                                    ],
-                                  ),
-                                ]),
-                          ),
-                          Container(
-                            margin: EdgeInsets.symmetric(vertical: 10),
-                            width: 440,
-                            // height: 500,
-                            child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Column(
-                                    children: [
-                                      Text(
-                                        "Peanut",
-                                        style: TextStyle(
-                                            color: Color.fromARGB(
-                                                255, 82, 95, 120),
-                                            fontSize: 18),
-                                      ),
-                                    ],
-                                  ),
-                                  Column(
-                                    children: [
-                                      Text(
-                                        "1 Kg",
-                                        style: TextStyle(
-                                            color: Color.fromARGB(
-                                                255, 82, 95, 120),
-                                            fontSize: 18),
-                                      ),
-                                    ],
-                                  ),
-                                ]),
-                          ),
-                          Container(
-                            margin: EdgeInsets.symmetric(vertical: 10),
-                            width: 440,
-                            // height: 500,
-                            child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Column(
-                                    children: [
-                                      Text(
-                                        "Skewers",
-                                        style: TextStyle(
-                                            color: Color.fromARGB(
-                                                255, 82, 95, 120),
-                                            fontSize: 18),
-                                      ),
-                                    ],
-                                  ),
-                                  Column(
-                                    children: [
-                                      Text(
-                                        "2 Pc",
-                                        style: TextStyle(
-                                            color: Color.fromARGB(
-                                                255, 82, 95, 120),
-                                            fontSize: 18),
-                                      ),
-                                    ],
-                                  ),
-                                ]),
-                          ),
-                          Container(
-                            margin: EdgeInsets.only(top: 10, bottom: 35),
-                            width: 440,
-                            // height: 500,
-                            child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Column(
-                                    children: [
-                                      Text(
-                                        "Fried Onion",
-                                        style: TextStyle(
-                                            color: Color.fromARGB(
-                                                255, 82, 95, 120),
-                                            fontSize: 18),
-                                      ),
-                                    ],
-                                  ),
-                                  Column(
-                                    children: [
-                                      Text(
-                                        "2 Pc",
-                                        style: TextStyle(
-                                            color: Color.fromARGB(
-                                                255, 82, 95, 120),
-                                            fontSize: 18),
-                                      ),
-                                    ],
-                                  ),
-                                ]),
-                          ),
-                        ],
+                          );
+                        }),
                       ),
                       Row(
                         children: [
