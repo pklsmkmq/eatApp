@@ -3,10 +3,33 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:tugas_my_eat/model/foodsdata.dart';
 import 'package:tugas_my_eat/myEat_detail.dart';
+import 'package:tugas_my_eat/service/foodService.dart';
 
-class MyEat extends StatelessWidget {
+class MyEat extends StatefulWidget {
   const MyEat({Key? key}) : super(key: key);
+
+  @override
+  State<MyEat> createState() => _MyEatState();
+}
+
+class _MyEatState extends State<MyEat> {
+  List<Foods> dataFoods = [];
+
+  void getFoodsData() {
+    FoodService().getData().then((value) {
+      setState(() {
+        dataFoods = value;
+      });
+    });
+  }
+
+  @override
+  void initState() {
+    getFoodsData();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -87,64 +110,18 @@ class MyEat extends StatelessWidget {
                 ),
               ),
               Wrap(
-                spacing: MediaQuery.of(context).size.width * 0.1,
-                children: [
-                  FoodList(
-                      context,
-                      "Satay",
-                      "https://img.inews.co.id/media/620/files/inews_new/2020/09/04/sate_ayam.jpg",
-                      "https://asset.kompas.com/crops/TZvXDrCNKfQvoijJUwvEwRW4xA8=/67x45:1000x667/750x500/data/photo/2017/06/22/163250620170622-042902-3586-chef.juna-.atau-.junior-.rorimpandey-.jpg",
-                      "Chef Juna",
-                      50,
-                      4.7,
-                      "30 Menit"),
-                  FoodList(
-                      context,
-                      "Fried Rice",
-                      "https://awsimages.detik.net.id/community/media/visual/2022/06/05/resep-nasi-goreng-tomat-dan-ayam.jpeg",
-                      "https://asset.kompas.com/crops/C_dSrAyZaTB41qUJ3g16Os61-Po=/389x160:863x476/750x500/data/photo/2021/02/15/602a138009d03.png",
-                      "Chef Arnold",
-                      50,
-                      4.7,
-                      "30 Menit"),
-                  FoodList(
-                      context,
-                      "Fried Chicken",
-                      "https://asset.kompas.com/crops/WBLvTBboX-lKFj3ehPXJpmMULYY=/0x298:750x798/780x390/data/photo/2020/09/25/5f6da653c1860.jpg",
-                      "https://asset.kompas.com/crops/C_dSrAyZaTB41qUJ3g16Os61-Po=/389x160:863x476/750x500/data/photo/2021/02/15/602a138009d03.png",
-                      "Chef Galih",
-                      50,
-                      4.7,
-                      "30 Menit"),
-                  FoodList(
-                      context,
-                      "Satay",
-                      "https://img.inews.co.id/media/620/files/inews_new/2020/09/04/sate_ayam.jpg",
-                      "https://asset.kompas.com/crops/TZvXDrCNKfQvoijJUwvEwRW4xA8=/67x45:1000x667/750x500/data/photo/2017/06/22/163250620170622-042902-3586-chef.juna-.atau-.junior-.rorimpandey-.jpg",
-                      "Chef Juna",
-                      50,
-                      4.7,
-                      "30 Menit"),
-                  FoodList(
-                      context,
-                      "Fried Rice",
-                      "https://awsimages.detik.net.id/community/media/visual/2022/06/05/resep-nasi-goreng-tomat-dan-ayam.jpeg",
-                      "https://asset.kompas.com/crops/C_dSrAyZaTB41qUJ3g16Os61-Po=/389x160:863x476/750x500/data/photo/2021/02/15/602a138009d03.png",
-                      "Chef Arnold",
-                      50,
-                      4.7,
-                      "30 Menit"),
-                  FoodList(
-                      context,
-                      "Fried Chicken",
-                      "https://asset.kompas.com/crops/WBLvTBboX-lKFj3ehPXJpmMULYY=/0x298:750x798/780x390/data/photo/2020/09/25/5f6da653c1860.jpg",
-                      "https://asset.kompas.com/crops/C_dSrAyZaTB41qUJ3g16Os61-Po=/389x160:863x476/750x500/data/photo/2021/02/15/602a138009d03.png",
-                      "Chef Galih",
-                      50,
-                      4.7,
-                      "30 Menit"),
-                ],
-              ),
+                  spacing: MediaQuery.of(context).size.width * 0.1,
+                  children: List.generate(dataFoods.length, (index) {
+                    return FoodList(
+                        context,
+                        dataFoods[index].nameFoods,
+                        dataFoods[index].imageFoods,
+                        dataFoods[index].imageFoods,
+                        dataFoods[index].recipeMakerFoods,
+                        dataFoods[index].kcalFoods,
+                        dataFoods[index].ratingFoods,
+                        "${dataFoods[index].timeFoods} menit");
+                  })),
             ],
           ),
         ),
